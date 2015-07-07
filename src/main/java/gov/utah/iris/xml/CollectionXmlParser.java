@@ -1,0 +1,113 @@
+/*
+ * CollectionXmlParser.java
+ *
+ * Created on August 3, 2005, 9:51 AM
+ */
+
+package gov.utah.iris.xml;
+
+import gov.utah.iris.xml.interfaces.XmlParser;
+import gov.utah.iris.xml.interfaces.CollectionHandler;
+
+import org.apache.log4j.Logger;
+import org.xml.sax.XMLReader;
+import org.xml.sax.SAXException;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.InputSource;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import java.util.Collection;
+import java.io.StringReader;
+import java.io.IOException;
+
+import javax.xml.parsers.*;
+
+import org.xml.sax.*;
+import org.apache.log4j.Logger;
+/**
+ *
+ * @author  SKINGDON
+ */
+@SuppressWarnings({"unused", "rawtypes"})
+public class CollectionXmlParser implements XmlParser{
+
+    private static Logger log = Logger.getLogger(CollectionXmlParser.class);
+    private CollectionHandler handler = null;
+    private String type = "content";
+
+    /** Creates a new instance of CollectionXmlParser */
+    public CollectionXmlParser( String type ) {
+        this.type = type;
+    }
+
+    /**
+     * Parses the specified xml and returns a HashMap of values or some other data structure
+     * @param xml - String of xml
+     * @return data - HashMap of values or other structures
+     */
+    public Collection parse(String xml) {
+
+        Collection data = null;
+
+
+        /**
+         * 1. parse xml (SAX)
+         * 2. put xml data into Collection
+         * 3. return Collection
+         */
+
+        // setup SAX parser factory
+        SAXParserFactory saxFactory = SAXParserFactory.newInstance();
+        saxFactory.setNamespaceAware(false);
+        saxFactory.setValidating(false);
+        XMLReader xmlReader = null;
+
+        try {
+            xmlReader = saxFactory.newSAXParser().getXMLReader();
+        }
+        catch ( ParserConfigurationException e ) {
+            //
+        }
+        catch ( SAXException e ) {
+            //
+        }
+
+        // setup the content handler & error handler, the parse
+        if ( xmlReader != null ) {
+
+            // set content handler
+            if (handler == null) {
+                handler = new CollectionXmlHandler();
+                ((CollectionXmlHandler)handler).setContentNodeName(type);
+            }
+            xmlReader.setContentHandler( (ContentHandler)handler );
+
+            // set error handler
+            xmlReader.setErrorHandler( new DefaultHandler() );
+
+            // parse xml document
+            try {
+                xmlReader.parse( new InputSource(new StringReader(xml)) );
+                data = handler.getData();
+            }
+            catch ( SAXException e ) {
+                //
+            }
+            catch ( IOException e ) {
+                //
+            }
+
+        }
+
+        // return data
+        return data;
+    }
+
+    public void setHandler( CollectionHandler handler ) {
+        this.handler = handler;
+    }
+
+}

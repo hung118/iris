@@ -1,0 +1,23 @@
+Follow steps below before running/deploying IRIS:
+
+1) Modify iris.properties to specify: 
+	1a) deployment 
+	1b) Web services
+	1c) UMD app profile info 
+	1d) UMD is up? 
+	1e) UMD login URL 
+	1f) Alert page.
+	
+2) Modify context.xml to specify local database, dev or prod.
+
+3) Make sure loginConfig.xml is correct.
+
+4) When testing on laptop, dev, or at, gov.iris.manager.ComplaintManager.java (starting at line 136 the else statement)
+might need be changed to specify mail recipients. And turn off Windows Firewall so mail will be sent when testing on laptop.
+
+5) When testing on laptop, if telnet send.state.ut.us:25 does not work (email security issues?), comment out line 65
+(line Transport.send(message)) of gov.iris.util/MailSender.java; take it off when done.
+ 
+6) Update version in irisIncludes.js, footer2().
+
+7) Logs can be turned on for debug Web service in localhost - log4j.properties.

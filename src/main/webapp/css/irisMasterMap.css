@@ -1,0 +1,620 @@
+
+
+
+/* !!! This site uses an elastic layout. Most browsers use 16px as the default font, so a 946px design = 946/16 = 59.125em  !!! */
+
+/* ------------------------------------------------   HTML   ------------------------------------------------ */
+body { 
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	margin:16px;
+	padding:0px;
+	background-image:url(../img/backgroundSlice5.gif);
+	background-repeat: repeat;
+}
+
+p, td, li, a {
+	font-size:14px;
+}
+
+p {
+	margin-top:0px;
+}
+
+hr {
+	height:1px;
+	color:#D5D5D5;
+	background-color:#D5D5D5;
+	border:0;
+}
+
+img {
+	border:none;
+	padding:0px;
+	margin:0px;
+}
+
+a {
+	color:#1C4A8C;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+ol {
+	margin-top:0px;
+}
+
+ul {
+	margin-top:0px;
+}
+
+li {
+	margin-bottom:.5em;
+}
+
+object, embed {
+	margin: 12px 0px;
+}
+
+td {
+	vertical-align:top;
+}
+/* ------------------------------------------------   Layout   ------------------------------------------------ */
+#wrapper {
+	background-color: #FFFFFF;
+	background-image:url(../img/whitebackground.gif);
+	width:59em; /*approx 946px */ 
+	margin: 0 auto;
+	text-align:left;
+	border: 1px solid #1C4A8C;
+	border-top:none;
+}
+
+
+#branding {
+	
+	/*background-color:#00FF00;
+	/*border:dashed 2px #00FF00;	*/
+	/*background:url(../img/branding/brandingSlice.gif) repeat-x;*/
+	height:78px;
+	/*background:url(../img/branding/backgroundDefault.gif) no-repeat right bottom;*/
+	/*background:url(../img/branding/backgroundDefault.gif) no-repeat right bottom;*/
+	border-bottom: #1C4A8C solid 4px;
+}
+
+#brandingLeft {
+	float:left;
+	width: 275px;
+}
+
+#brandingMiddle {
+	float:left;
+	width: 485px;
+}
+
+#brandingRight {
+	float:right;
+	width: 129px;
+}
+
+#branding img {
+	float:left;
+}
+
+#brandingGraphic {
+	/*border: dashed 2px #0000FF;*/
+	/*margin-top:-30px;*/
+	float:left;
+}
+
+#uiiBanner {
+	/*background:#660000;*/
+	/*border:red dashed 2px;*/
+	/*height:31px;*/
+	/*background-image:url(../img/uii/slice.gif);*/
+	/*background-repeat:repeat-x;*/
+}
+
+#uiiBanner img {
+	float:left;
+}
+
+#uiiBanner {
+	background-image:url(../img/uiiBackground.gif);
+	background-repeat:repeat-x;
+	height:31px;
+}
+
+#uiiBanner td {
+	vertical-align:middle;
+	padding:0px;
+}
+
+#uiiBanner input {
+	/*border:dotted 2px purple;*/
+	margin-right:4px
+}
+
+#uiiStage {
+	/*border:dashed blue 1px;*/
+	visibility:hidden;
+	margin-left:-1000em;
+	width:500px;
+	float:left;
+}
+
+#mainNav {
+	white-space:nowrap;
+	/*max-height:30px;*/
+	height:25px;
+	border-bottom:1px #1C4A8C solid;
+	margin-right: 1px;
+	margin-left: 1px;
+	clear:both;
+	/*padding-left:16px;*/
+	/*background-color:#FF9900;*/
+}
+
+#mainNav ul {
+	/*border:red dotted 1px;*/
+	margin-top: 10px;
+	padding: 10px 20px 0px 20px;
+	/*width: 160px;*/
+}
+
+#mainNav li {
+	/*border:red dotted 1px;*/
+	position:relative;
+	list-style:none;
+	float:left;
+	height:25px;
+	/*width: 160px;*/
+}
+
+
+#mainNav a {
+	text-decoration: none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: .8em;
+	padding: 0px 20px 0px 20px;
+	color:#1C4A8C;
+	/*padding-left:20px;*/
+}
+
+#mainNav a:hover {
+	text-decoration: underline;
+}
+
+.mainNavArray[0] a {
+	text-decoration: none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	color:#cb2c2c;
+}
+
+.mainNavArray[0] a:hover {
+	text-decoration: underline;
+}
+
+#mainNav .selected {
+ color: #CB2C2C;
+ /*background-color:#AB1717;*/
+ font-size: 1em;
+}
+
+#breadCrumb {
+	font-size:11px;
+	/*padding-top:6px;*/
+	/*padding-right:16px;*/
+	/*padding-left:16px;*/
+	padding-bottom:10px;
+	/*border-bottom:1px #D5D5D5 solid;*/
+}
+
+#breadCrumb a {
+	text-decoration:none;
+	font-size:11px;
+}
+
+#breadCrumb a:hover {
+	text-decoration:underline;
+}
+
+#content {
+	/*background-color:#00FF00;*/
+	width:47em;
+	float:right;
+}
+
+
+
+#mainContent {
+	/*background-color:#00FF00;*/
+	width:44.5em;
+	float:left;
+	padding:16px;
+	padding-top:8px;
+	border-left:1px #1C4A8C solid;
+}
+
+#secondaryContent {
+	/*background-color:#FF6600;*/
+	width:11.7em; 
+	float:right;
+}
+
+#secondaryHomeContent {
+	/*background-color:#FF6600;*/
+	width:11.6em; 
+	float:right;
+}
+
+#secondaryNavWrapper {
+	/*background-color:#3333FF;*/
+	width:12em;
+	float:left;
+}
+
+.secondaryNav {
+	/*background-color:#3333FF;*/
+	width:10em;
+	float:left;
+	padding:16px;
+}
+
+.secondaryNav ul {
+	/*border:red dotted 1px;*/
+	margin:10px;
+	padding:0px;
+}
+
+.secondaryNav li {
+	font-size:.8em;
+	list-style:none;
+}
+
+.secondaryNav li a {
+	/*font-weight:bold;*/ 
+	text-decoration:none;
+}
+
+.secondaryNav li a:hover {
+	text-decoration:underline;
+}
+
+#secondaryRss ul {
+	/*border:red dotted 1px;*/
+	margin:25px;
+	padding:0px;
+}
+
+#secondaryRss li {
+	font-size:.7em; 
+	list-style: url(../img/icons/iconRss.gif);
+	line-height:15px;
+	margin-bottom:-12px;
+ }
+ 
+
+#copyright {
+	width:960px; 
+	text-align: center;
+	margin-top: 2em;
+	font-size:13px;
+}
+
+#footer {
+	width:57em; 
+	margin: 5px auto;
+	padding: 0 16px;
+}
+
+#footer p {
+	color: #FFFFFF;
+	/*font-weight: bold;*/
+	margin-top: 5px;
+}
+
+#footer a {
+	font-size:13px;
+	color: #FFFFFF;
+	font-weight: bold;
+	margin: 20px 20px 0px 6px;
+	decoration: none:	
+}
+
+#footer a: hover {
+	decoration: underline;
+}
+
+.clear {
+	clear:both;
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------   #Content table Custom   ------------------------------------------------ */
+/* UII uses table layout in their header and footer, so any table customization we do needs to go with a specific <div> */
+
+#content table {
+	border-collapse:collapse;
+	border:none;
+}
+
+#content th, #content td {
+	padding:4px;
+}
+
+#content caption {
+}
+
+#content thead {
+}
+
+#content th {
+}
+
+#content tr:hover {
+}
+
+/*---------------------------Status Table--------------------------------------------*/
+
+.statusBars td {
+	border-bottom: #999999 1px solid;
+}
+
+.completedStatus a {
+	color: #999999;
+}
+
+.currentStatus a {
+	font-weight: bold;
+}
+
+
+
+
+/* ------------------------------------------------   searchBox Stuff   ------------------------------------------------ */
+#searchBox {
+	/*background-color:#FF0000;*/
+	/*border:dashed purple 1px;*/
+	float:right;
+	white-space:nowrap;
+	color:#FFFFFF;
+	margin-top:48px;
+	/*margin-right:-16px;*/
+	margin-right:32px;
+}
+
+#searchBox input {
+	padding-right:8px;
+	padding-top: 0px;
+	padding-bottom:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#searchBox img {
+	float:none;
+	padding:0px;
+	margin:0px;
+	margin-left:8px;
+}
+
+#searchBox a {
+	margin:0 8px;
+	color:#FFFFFF;
+}
+
+/* !!! For some reason, <img> and <input type="image"> ignore margin css when in a form and add a gap, making it difficult to style. Use this class in conjunction with a <button></button> tag to fix it. */
+.searchButton {
+	background: transparent url(../img/buttons/buttonSearch.gif) no-repeat center top;
+	width: 62px;
+	height: 21px;
+	padding: 0;
+	margin: 0;
+	margin-left:6px;
+	border: 0;
+	text-indent: -1000em;
+	overflow: hidden;
+	cursor: pointer; /* hand-shaped cursor */
+	cursor: hand; /* for IE 5.x */
+}
+
+.orderhead {
+	float:right;
+	padding:5px;
+}
+
+
+/* ------------------------------------------------   Forms   ------------------------------------------------ */
+/* !!!  i'm using a definition list <dl><dt><dd> to format the columns in the form instead of using a table.  !!! */
+.orderForm {
+	/*background-color:#FFFF00;*/
+}
+
+.orderForm fieldset {
+	margin:1em 0;
+	padding:1em;
+	border:1px solid #CCCCCC;
+	background-color:#F8F8F8;
+}
+
+.orderForm legend {
+	color:#666666;
+	font-weight:bold;
+}
+
+.orderForm input {
+	/*width:220px;*/
+	padding:2px 4px;
+}
+
+.orderForm textarea {
+	width:220px;
+	height:100px;
+}
+
+.orderForm input:focus, textarea:focus, select:focus {
+	/*background-color:#8EBF51;*/
+}
+
+.orderForm input {
+	border:1px solid #CCCCCC;
+}
+
+.orderForm textarea {
+	border:1px solid #CCCCCC;
+}
+
+.orderForm select {
+	border:1px solid #CCCCCC;
+}
+
+.orderForm dt {
+	/*background-color:#CCFFCC;*/
+    clear:both;
+    /*width:33%;*/
+	width:250px;
+    float:left;
+    text-align:right;
+}
+
+.orderForm dd {
+	/*background-color:#00CCFF;*/
+    float:left;
+    /*width:66%;*/
+    width:220px;
+    margin:0 0 8px 4px;
+}
+
+.orderForm p {
+	clear:both;
+}
+
+.orderForm button {
+	border:1px solid #CCCCCC;
+	background-color:#F8F8F8;
+	padding:3px;
+	margin-right:6px;
+}
+
+.orderForm button:hover {
+	background-color:#FFFFCC;
+}
+
+.requiredField {
+	background-color:#FFFFCC;
+}
+
+.hideLabel {
+	margin-left:-1000em;
+}
+
+.resultsData {
+	/*color:#6600CC;*/
+	font-size:.8em;
+}
+
+.documentDates {
+	/*color:#6600CC;*/
+	font-size:.90em;
+}
+.fullWidth  textarea {
+    width:860px;
+	height:200px;
+}
+
+.fullWidth  input {
+    width:800px;
+}
+
+
+.fullWidth dd {
+    width:860px;
+}
+
+/* ------------------------------------------------   Custom   ------------------------------------------------ */
+.menuList {
+	padding:0px;
+	margin:0 0 16px 0;	
+}
+
+.menuList li {
+	list-style:none;
+	margin:0px 0px 6px 0px;
+}
+
+
+
+
+.thumbBlock { 
+	/*border:black dotted 1px;*/
+	display:block;
+	margin-bottom:.8em;
+}
+
+.thumbBlock img {
+	float:left;
+	padding: 0px 6px 2px 6px;
+}
+
+.thumbBlock p, .thumbBlock h4 {
+	/*margin-left:106px;*/
+}
+
+
+/* skipToConent contains a link to help screen readers jump over uii and other redundant navigation and get right to the page content */
+#skipToContent {
+	/*background-color:#0000FF;*/
+	margin-left:-1000em;
+	width:500px;
+	float:left;
+}
+
+
+.handcursor{
+	cursor:hand;
+	cursor:pointer;
+	margin-top:5px;
+	margin-bottom:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+
+.listLink {
+	list-style-type:none;
+	padding-left:12px;
+	margin-left:12px;
+}
+
+.listLink li {
+	/*color:#FF0000;*/
+}
+
+.listplain {
+	list-style-type:none;
+	padding-left: 1px;
+}
+
+/* Misc */
+.boldformcopy {
+	font-weight: bold;
+	color: #000000;
+}
+
+
+
+
+
+
+
+

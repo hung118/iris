@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context debug="0" docBase="iris" path="/iris" reloadable="true">
+	<!-- test -->
+	<Resource auth="Container"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+		logAbandoned="true" maxActive="100" maxIdle="30" maxWait="10000"
+		name="irisDatasource" password="irist3st" removeAbandoned="true"
+		removeAbandonedTimeout="60" type="javax.sql.DataSource"
+		url="jdbc:oracle:thin:@itdb200sp.dts.utah.gov:1521:vat2"
+		username="at_iris" />
+</Context>

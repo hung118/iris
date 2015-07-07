@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>iris</display-name>
+    <description>iris</description>
+    <!-- root application context loader -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>iris</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/classes/iris-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+	<servlet>
+		<servlet-name>PDFReportGen</servlet-name>
+		<servlet-class>gov.utah.iris.reports.PDFReportGenServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PDFReportBatchGen</servlet-name>
+		<servlet-class>gov.utah.iris.reports.PDFReportBatchGenServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>crossDomainSessionSecurity</param-name> 
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+        <servlet-name>iris</servlet-name>
+        <url-pattern>/secure/start</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>iris</servlet-name>
+        <url-pattern>/secure/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>iris</servlet-name>
+        <url-pattern>*.admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>iris</servlet-name>
+        <url-pattern>*.json</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>iris</servlet-name>
+        <url-pattern>*.xml</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>iris</servlet-name>
+        <url-pattern>*.shtml</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PDFReportGen</servlet-name>
+		<url-pattern>/PDFReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PDFReportBatchGen</servlet-name>
+		<url-pattern>/PDFReportBatch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/public/dwr/*</url-pattern>
+	</servlet-mapping>
+
+    <!-- JPA support for assisting with lazy loading data -->
+	<filter>
+		<filter-name>OpenEntityManagerInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+		<init-param>
+			<param-name>entityManagerFactory</param-name>
+			<param-value>persistence.EntityManagerFactory</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>OpenEntityManagerInViewFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<error-page>
+	    <!-- Loosing session -->
+	    <error-code>404</error-code>
+	    <location>/error404.html</location>
+	</error-page>
+
+</web-app>

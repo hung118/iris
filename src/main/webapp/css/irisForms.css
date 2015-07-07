@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+.hidden {display:none}
+
+.errors {background:#ffc; color:#f00; font-weight:500; padding:3px}
+.errors ul {margin:10px 0 7px 20px; list-style-type:dot}
+.errors ul span.field {font-weight:bold; border:0}
+
+.redtext {
+	color: #FF0000;
+}
+
+/** validation errors **/
+.error {
+	color: #ff0000;
+}
+.errorBlock{
+	color: #000;
+	background-color: #ffEEEE;
+	border: 1px solid #ff0000;
+	padding:8px;
+	margin:16px;
+}
+
+/** jquery validation **/
+label.error {
+	display: block;
+	color: red;
+	font-style: italic;
+	font-weight: normal;
+	width: 15.5em;
+	text-align: left;
+}
+
+/** jquery datepicker **/
+.datePickerContainer * {
+margin: 0pt;
+padding: 0pt;
+border-width: 0px;
+}
+input.date, input.datepicker {
+	width: 7.5em !important;
+}
+img.ui-datepicker-trigger {
+	cursor: pointer;
+	vertical-align: middle;
+	margin-left:3px;
+} 
+.ui-datepicker-header { 
+   background: #08298A;
+}  
+.ui-datepicker-prev, .ui-datepicker-next {  
+    display: inline-block;  
+    width: 30px;  
+    height: 30px;  
+    text-align: center;  
+    cursor: pointer;  
+    background-image: url('../img/arrow.png');  
+    background-repeat: no-repeat;  
+    line-height: 600%;  
+    overflow: hidden;  
+}
+.ui-datepicker-prev {
+	float: left;
+	background-position: center -30px;
+}
+.ui-datepicker-next {
+	float: right;
+	background-position: center 0px;
+}
+.ui-datepicker .ui-state-hover .ui-icon,.ui-datepicker .ui-state-focus .ui-icon {
+	background-image: url(../img/ui-icons_6e2672_256x240.png); 
+} 
+
+/* ******** JQUERY UI OVERRIDES and related ************************************************ */
+.ui-widget-overlay {
+	background:rgba(0,0,0,0.6) none;
+	opacity: 1;
+	filter: Alpha(Opacity=1);
+}
+.IRIS.ui-dialog {
+	padding:0;
+	border-radius: 10px;
+}
+.IRIS.ui-dialog .ui-dialog-titlebar {
+	border:none;
+	background: #0B2161 none;
+	border-radius: 0;
+}
+.IRIS.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+	color:#fff;
+}
+.IRIS .ui-widget-header .ui-icon {
+	background-image: url('../img/white-x-12px.png');
+	background-position: center center;
+}
+.IRIS .ui-dialog-titlebar-close.ui-state-hover {
+	background: red none;
+	border:1px solid red;
+}
+.IRIS.ui-dialog .ui-dialog-content {
+	background:#f2f2f2 none;
+}
+
+.IRIS.ui-dialog .ui-dialog-buttonpane {
+	margin:0;
+}
+
+.centeredFrame {
+	width: 95%; 
+	height: 95%; 
+	position:relative; 
+	vertical-align: middle;
+}	
+
+.centeredFrame img{
+	position: relative; 
+	top: 50%; 
+	left: 50%;
+}	
+
+.adminHead1 {
+	background: #0b2b51; 
+	color: white; 
+	text-align: center
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context debug="0" docBase="iris" path="/iris" reloadable="true" useHttpOnly="true">
+	<!-- test -->
+	<Resource auth="Container"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+		type="javax.sql.DataSource"
+		logAbandoned="true" 
+		maxActive="100" 
+		maxIdle="30" 
+		maxWait="10000"
+		removeAbandoned="true"
+		removeAbandonedTimeout="60"
+		url="jdbc:oracle:thin:@itdb200sp.dts.utah.gov:1521:vat2" 
+		name="jdbc/iris" 
+		username="at_iris"
+		password="irist3st" 
+		validationQuery="select 1 from dual"/>
+		
+	<!-- production 
+	<Resource auth="Container"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+		type="javax.sql.DataSource"
+		logAbandoned="true" 
+		maxActive="100" 
+		maxIdle="30" 
+		maxWait="10000"
+		removeAbandoned="true"
+		removeAbandonedTimeout="60" 
+		url="jdbc:oracle:thin:@itdb201sp.dts.utah.gov:1521:vpd1"
+		name="jdbc/iris" 
+		username="at_iris" 
+		password="irispr0d" 
+		validationQuery="select 1 from dual"/ -->
+</Context>

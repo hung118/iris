@@ -1,0 +1,189 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="mainLayout" template="/WEB-INF/jsp/templates/main.jsp">
+        <put-attribute name="pageTitle" value="IRIS" />
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/blank.jsp" />
+    </definition>
+    <definition name="adminLayout" template="/WEB-INF/jsp/templates/admin.jsp">
+        <put-attribute name="pageTitle" value="IRIS Administration" />
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/blank.jsp" />
+    </definition>
+    <definition name="publicLayout" template="/WEB-INF/jsp/templates/unprotected.jsp">
+        <put-attribute name="pageTitle" value="IRIS Public Access" />
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/blank.jsp" />
+    </definition>
+    <definition name="template1" template="/WEB-INF/jsp/templates/template1.jsp">
+        <put-attribute name="pageTitle" value="IRIS" />
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/blank.jsp" />
+    </definition>
+    <definition name="dialog" template="/WEB-INF/jsp/templates/dialogTemplate.jsp">
+        <put-attribute name="title" value="Dialog" />
+        <put-attribute name="content" value="" />
+    </definition>
+    <definition name="printLayout" template="/WEB-INF/jsp/templates/printTemplate.jsp">
+        <put-attribute name="pageTitle" value="IRIS" />
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/blank.jsp" />
+    </definition>
+    <definition name="publicMapLayout" template="/WEB-INF/jsp/templates/full_template_map.jsp">
+        <put-attribute name="pageTitle" value="IRIS Public Access" />
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/blank.jsp" />
+    </definition>
+    
+    <definition name="claimsList" extends="mainLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/claimsList.jsp" />
+    </definition>
+    <definition name="viewClaim" extends="mainLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/viewClaim.jsp" />
+    </definition>
+    <definition name="caseStatusList" extends="printLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/displays/caseStatusList.jsp" />
+    </definition>
+    <definition name="pickIncidents" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/pickIncidents.jsp" />
+    </definition>
+    <definition name="ssn" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/ssn.jsp" />
+    </definition>
+    <definition name="ssn_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/ssn_ro.jsp" />
+    </definition>    
+    <definition name="banktrans" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/banktrans.jsp" />
+    </definition>
+    <definition name="banktrans_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/banktrans_ro.jsp" />
+    </definition>
+    <definition name="benefits" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/benefits.jsp" />
+    </definition>
+    <definition name="benefits_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/benefits_ro.jsp" />
+    </definition>
+    <definition name="unauthcredit" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/unauthcredit.jsp" />
+    </definition>
+    <definition name="unauthcredit_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/unauthcredit_ro.jsp" />
+    </definition>
+    <definition name="creditreport" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/creditreport.jsp" />
+    </definition>
+    <definition name="creditreport_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/creditreport_ro.jsp" />
+    </definition>
+    <definition name="loan" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/loan.jsp" />
+    </definition>
+    <definition name="loan_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/loan_ro.jsp" />
+    </definition>
+    <definition name="idloststolen" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/idloststolen.jsp" />
+    </definition>
+    <definition name="idloststolen_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/idloststolen_ro.jsp" />
+    </definition>
+    <definition name="collector" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/collector.jsp" />
+    </definition>
+    <definition name="collector_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/collector_ro.jsp" />
+    </definition>
+    <definition name="telephone" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/telephone.jsp" />
+    </definition>
+    <definition name="telephone_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/telephone_ro.jsp" />
+    </definition>
+    <definition name="utilities" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/utilities.jsp" />
+    </definition>
+    <definition name="utilities_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/utilities_ro.jsp" />
+    </definition>
+    <definition name="suit" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/suit.jsp" />
+    </definition>
+    <definition name="suit_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/suit_ro.jsp" />
+    </definition>
+    <definition name="email" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/email.jsp" />
+    </definition>
+    <definition name="email_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/email_ro.jsp" />
+    </definition>
+    <definition name="other_idtheft" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/other_idtheft.jsp" />
+    </definition>
+    <definition name="other_idtheft_ro" extends="template1">
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/other_idtheft_ro.jsp" />
+    </definition>
+    <definition name="dwsloginForm" extends="template1">
+        <put-attribute name="content" value="/dwsloginForm.jsp" />
+    </definition>
+    
+    <definition name="suspect" extends="dialog">
+        <put-attribute name="title" value="Suspect"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/suspect.jsp" />
+    </definition>
+    <definition name="accou" extends="dialog">
+        <put-attribute name="title" value="Account Holder"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/accou.jsp" />
+    </definition>
+    <definition name="trans" extends="dialog">
+        <put-attribute name="title" value="Unauthorized Transaction"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/trans.jsp" />
+    </definition>
+    <definition name="tranx" extends="dialog">
+        <put-attribute name="title" value="Unauthorized Transaction"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/tranx.jsp" />
+    </definition>
+    <definition name="issue" extends="dialog">
+        <put-attribute name="title" value="Unauthorized Transaction"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/issue.jsp" />
+    </definition>
+    <definition name="colle" extends="dialog">
+        <put-attribute name="title" value="Collection Agency"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/colle.jsp" />
+    </definition>
+    <definition name="credi" extends="dialog">
+        <put-attribute name="title" value="Creditor Information"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/forms/credi.jsp" />
+    </definition>
+    
+    <definition name="adminConsole" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/adminConsole.jsp" />
+    </definition>
+    <definition name="alertList" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/alertList.jsp" />
+    </definition>
+    <definition name="alertForm" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/alertForm.jsp" />
+    </definition>
+    <definition name="userProxyForm" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/userProxyForm.jsp" />
+    </definition>
+    <definition name="userProxyInfo" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/userProxyInfo.jsp" />
+    </definition>
+    <definition name="searchORIForm" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/searchORIForm.jsp" />
+    </definition>
+    <definition name="dwsList" extends="adminLayout">
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/dwsList.jsp" />
+    </definition>
+
+    <definition name="validateVictimForm" extends="publicLayout">
+        <put-attribute name="content" value="/public/validateVictimForm.jsp" />
+    </definition>
+    <definition name="validateVictimResults" extends="publicLayout">
+        <put-attribute name="content" value="/public/validateVictimResults.jsp" />
+    </definition>
+    <definition name="irisMapLayout" extends="publicMapLayout">
+        <put-attribute name="content" value="/public/mapResults.jsp" />
+    </definition>
+
+
+</tiles-definitions>

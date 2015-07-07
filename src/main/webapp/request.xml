@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udps:UDPSXML xmlns:udps="http://webservices.ucjis.utah.gov/udpsxml/release/1.0"
+	xmlns:j="http://www.it.ojp.gov/jxdm/3.0">
+	<udps:DocumentDescriptor type="IRIS" class=""
+		authenticator="UCJIS" routingCode="L" />
+	<udps:Header>
+		<udps:Version>3.0</udps:Version>
+		<udps:System>
+			<j:ID>Webservices</j:ID>
+		</udps:System>
+		<udps:TransactionID>
+			<j:ID>1456789</j:ID>
+		</udps:TransactionID>
+		<udps:Submitter>
+			<udps:UDPSAgency>
+				<j:ID>AGIDFR</j:ID>
+			</udps:UDPSAgency>
+			<udps:UDPSAuthentication>
+				<udps:UDPSLogon encrypted="true" source="udps:DocumentDescriptor">idfraudt
+				</udps:UDPSLogon>
+				<udps:UDPSPassword encrypted="true"
+					source="udps:DocumentDescriptor">id4fraud</udps:UDPSPassword>
+			</udps:UDPSAuthentication>
+		</udps:Submitter>
+		<udps:InitiatingAgency>
+			<j:Agency>
+				<j:OrganizationORIID>
+					<j:ID>UXAGIDFRD</j:ID>
+				</j:OrganizationORIID>
+			</j:Agency>
+		</udps:InitiatingAgency>
+		<udps:Destinations>
+			<udps:Destination>
+				<j:Agency>
+					<j:OrganizationID>
+						<j:ID>UT</j:ID>
+					</j:OrganizationID>
+				</j:Agency>
+			</udps:Destination>
+		</udps:Destinations>
+	</udps:Header>
+	<udps:TransactionParameters>
+		<select>
+			<type>complaintDetails</type>
+			<action>select</action>
+			<trackingNumber>1421076642635</trackingNumber>
+			<umdId>cn=000195371,ou=Emp,ou=Gov,o=UT</umdId>
+		</select>
+	</udps:TransactionParameters>
+</udps:UDPSXML>

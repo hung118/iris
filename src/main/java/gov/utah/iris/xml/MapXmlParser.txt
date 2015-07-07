@@ -1,0 +1,101 @@
+/*
+ * PersonXmlParser.java
+ *
+ * Created on August 3, 2005, 9:51 AM
+ */
+
+package gov.iris.xml;
+
+import gov.iris.xml.interfaces.XmlParser;
+import gov.iris.xml.interfaces.MapHandler;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Collection;
+import java.util.ArrayList;
+import java.io.StringReader;
+import java.io.IOException;
+import javax.xml.parsers.*;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.*;
+import org.apache.log4j.Logger;
+/**
+ *
+ * @author  SKINGDON
+ */
+public class MapXmlParser {
+
+    private static Logger log = Logger.getLogger(MapXmlParser.class);
+    private MapHandler handler = null;
+
+    /** Creates a new instance of HashXmlParser */
+    public MapXmlParser() {
+    }
+
+    /**
+     * Parses the specified xml and returns a HashMap of values or some other data structure
+     * @param xml - String of xml
+     * @return data - HashMap of values or other structures
+     */
+
+    public Map parse(String xml) {
+
+        Map data = new HashMap();
+
+
+        /**
+         * 1. parse xml (SAX)
+         * 2. put xml data into HashMap
+         * 3. return HashMap
+         */
+
+        // setup SAX parser factory
+        SAXParserFactory saxFactory = SAXParserFactory.newInstance();
+        saxFactory.setNamespaceAware(false);
+        saxFactory.setValidating(false);
+        XMLReader xmlReader = null;
+
+        try {
+            xmlReader = saxFactory.newSAXParser().getXMLReader();
+        }
+        catch ( ParserConfigurationException e ) {
+            //
+        }
+        catch ( SAXException e ) {
+            //
+        }
+
+        // setup the content handler & error handler, the parse
+        if ( xmlReader != null ) {
+
+            // set content handler
+            if (handler == null) {
+                handler = new MapXmlHandler();
+            }
+            xmlReader.setContentHandler( (ContentHandler)handler );
+
+            // set error handler
+            xmlReader.setErrorHandler( new DefaultHandler() );
+
+            // parse xml document
+            try {
+                xmlReader.parse( new InputSource(new StringReader(xml)) );
+                data = handler.getData();
+            }
+            catch ( SAXException e ) {
+                //
+            }
+            catch ( IOException e ) {
+                //
+            }
+
+        }
+
+        return data;
+    }
+
+    public void setHandler( MapHandler handler ) {
+        this.handler = handler;
+    }
+
+}

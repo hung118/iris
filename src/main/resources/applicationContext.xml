@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xmlns:batch="http://www.springframework.org/schema/batch"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.2.xsd
+        http://www.springframework.org/schema/batch 
+        http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- context:property-placeholder location="classpath:appinfo.properties" / -->
+	<context:annotation-config />
+	<context:component-scan base-package="gov.utah.iris.repository"/>
+	
+	<tx:annotation-driven proxy-target-class="true"/>
+
+	<import resource="applicationContext-dal.xml" />
+	<!-- don't need spring security, it used UMD app profile, no role. -->
+	<!-- import resource="applicationContext-security.xml" / -->
+	
+	<!-- IOC DAO Layer (alphabetize for helpful searching/reading) -->
+	<jpa:repositories base-package="gov.utah.iris.repository"  entity-manager-factory-ref="entityManagerFactory"/>
+        
+	<!-- IOC Service Layer (alphabetize for helpful searching/reading) -->
+	<bean id="adminService" class="gov.utah.iris.service.AdminServiceImpl" />
+	<bean id="mapDataService" class="gov.utah.iris.service.MapDataServiceImpl" />
+	<bean id="userService" class="gov.utah.iris.service.UserServiceImpl" />
+		
+</beans>

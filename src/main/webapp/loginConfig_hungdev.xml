@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE LoginConfig SYSTEM "https://login2.dev.utah.gov/user/loginConfig.dtd">
+
+<LoginConfig>
+    <application name='Identity Theft Reporting Information System'>
+        <URL>http://hung.dev.utah.gov/iris</URL>
+        <banner-image>http://hung.dev.utah.gov/iris/images/UMDBanner.gif</banner-image>
+        <login-message id='default-login'/>
+        <create-message id='default-create'/>
+        <deny-message id='default-deny'/>
+        <required>
+            <logicGroup type='and'>
+				<attribute type='LDAP' name='GivenName' format='text' user='true' sequence='1' label='firstName'/>
+				<attribute type='LDAP' name='SurName' format='text' user='true' sequence='2' label='lastName'/>
+				<attribute type='LDAP' name='mail' format='text' user='true' sequence='3' label='email'/>
+				<attribute type='LDAP' name='homePostalAddress' format='text' user='true' sequence='4' label='streetAddress'/>
+				<attribute type='LDAP' name='homeCity' format='text' user='true' sequence='5' label='city'/>
+				<attribute type='LDAP' name='homeState' format='text' user='true' sequence='6' label='state'/>
+				<attribute type='LDAP' name='homeZipCode' format='text' user='true' sequence='7' label='zipCode'/>
+				<attribute type='LDAP' name='homePhone' format='text' user='true' sequence='8' label='phone'/>
+				<attribute type='LDAP' name='SocialSecurityNumber' format='text' user='true' sequence='9' label='ssn'/>
+				<attribute type='LDAP' name='BirthDate' format='text' user='true' sequence='10' label='birthDay'/>
+	    	</logicGroup>
+        </required>
+        <request allowed='false'/>
+    </application>
+    
+    <message id='firstName'>
+    	<text language='en'>First Name</text>
+    </message>
+    <message id='lastName'>
+    	<text language='en'>Last Name</text>
+    </message>
+    <message id='email'>
+    	<text language='en'>Email</text>
+    </message>
+    <message id='streetAddress'>
+    	<text language='en'>Home Street Address</text>
+    </message>
+    <message id='city'>
+    	<text language='en'>City</text>
+    </message>
+    <message id='state'>
+    	<text language='en'>State</text>
+    </message>
+    <message id='zipCode'>
+    	<text language='en'>Zip Code</text>
+    </message> 
+    <message id='phone'>
+    	<text language='en'>Phone</text>
+    </message> 
+    <message id='ssn'>
+    	<text language='en'>Social Security Number</text>
+    </message> 
+    <message id='birthDay'>
+    	<text language='en'>Date of Birth</text>
+    </message> 
+ 
+	<message id='default-login'>
+	    <text language='en'>I.R.I.S. Development Login</text>
+    </message>
+	<message id='default-create'>
+		<text language='en'>Create an Account to Access this system</text>
+	</message>
+	<message id='default-deny'>
+		<text language='en'>deny</text>
+	</message>	
+
+</LoginConfig>
